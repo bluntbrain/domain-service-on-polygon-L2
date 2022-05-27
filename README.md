@@ -64,3 +64,5 @@ You'd need to do 3 things:
 2. We need to update the contract address on our frontend.
 3. We need to update the abi file on our frontend.
 ```
+
+_; at the end means is that any function using the modifier should be executed after the require.
