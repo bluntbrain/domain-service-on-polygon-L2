@@ -10,7 +10,7 @@ import { StringUtils } from "../libraries/StringUtils.sol";
 import {Base64} from "../libraries/Base64.sol";
 import "hardhat/console.sol";
 
-contract Domains {
+contract Domains is ERC721URIStorage{
     // Magic given to us by OpenZeppelin to help us keep track of tokenIds.
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
@@ -35,11 +35,11 @@ contract Domains {
     uint len = StringUtils.strlen(name);
     require(len > 0);
     if (len == 3) {
-      return 5 * 10**17; // 5 MATIC = 5 000 000 000 000 000 000 (18 decimals). We're going with 0.5 Matic cause the faucets don't give a lot
+      return 0.05 * 10**17; // 5 MATIC = 5 000 000 000 000 000 000 (18 decimals). We're going with 0.5 Matic cause the faucets don't give a lot
     } else if (len == 4) {
-      return 3 * 10**17; // To charge smaller amounts, reduce the decimals. This is 0.3
+      return 0.03 * 10**17; // To charge smaller amounts, reduce the decimals. This is 0.3
     } else {
-      return 1 * 10**17;
+      return 0.01 * 10**17;
     }
   }
 

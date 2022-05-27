@@ -10,12 +10,12 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
-
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
 module.exports = {
   solidity: "0.8.10",
+  networks: {
+    mumbai: {
+      url: "https://polygon-mumbai.g.alchemy.com/v2/Wmrgcamf45JKnl8sCGSiX7aAloXIRBUY",
+      accounts: ["6403b630717ba325063d9cc08f5faadf39323059f7b9308305293fa761f0378f"],
+    }
+  }
 };
