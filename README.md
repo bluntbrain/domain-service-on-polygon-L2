@@ -67,3 +67,5 @@ You'd need to do 3 things:
 ```
 
 _; at the end means is that any function using the modifier should be executed after the require.
+
+What is payable? https://solidity-by-example.org/payable/
