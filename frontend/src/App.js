@@ -59,7 +59,6 @@ const App = () => {
     }
   };
 
-  // This will run any time currentAccount or network are changed
   useEffect(() => {
     if (network === "Polygon Mumbai Testnet") {
       fetchMints();
@@ -234,10 +233,8 @@ const App = () => {
           placeholder="whats ur ninja power?"
           onChange={(e) => setRecord(e.target.value)}
         />
-        {/* If the editing variable is true, return the "Set record" and "Cancel" button */}
         {editing ? (
           <div className="button-container">
-            // This will call the updateDomain function we just made
             <button
               className="cta-button mint-button"
               disabled={loading}
@@ -245,8 +242,6 @@ const App = () => {
             >
               Set record
             </button>
-            // This will let us get out of editing mode by setting editing to
-            false
             <button
               className="cta-button mint-button"
               onClick={() => {
@@ -257,7 +252,6 @@ const App = () => {
             </button>
           </div>
         ) : (
-          // If editing is not true, the mint button will be returned instead
           <button
             className="cta-button mint-button"
             disabled={loading}
@@ -292,7 +286,6 @@ const App = () => {
                         {tld}{" "}
                       </p>
                     </a>
-                    {/* If mint.owner is currentAccount, add an "edit" button*/}
                     {mint.owner.toLowerCase() ===
                     currentAccount.toLowerCase() ? (
                       <button
@@ -317,7 +310,6 @@ const App = () => {
     }
   };
 
-  // This will take us into edit mode and show us the edit buttons!
   const editRecord = (name) => {
     console.log("Editing record for", name);
     setEditing(true);
